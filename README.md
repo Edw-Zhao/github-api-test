@@ -8,8 +8,8 @@ On the subject of time, I had not counted setting up the codebase and installing
 
 Initial blueprint:
 -	Setup codebase and install dependencies (timer starts after this line).
--	Use a <button> for debugging and try to get Angular’s HttpClient working to get the correct GitHub API data ASAP.
--	Setup part of the NgRx implementation so that the <button> would dispatch the action instead and the actual API call moved to effects.ts
+-	Use a `<button>` for debugging and try to get Angular’s HttpClient working to get the correct GitHub API data ASAP.
+-	Setup part of the NgRx implementation so that the `<button>` would dispatch the action instead and the actual API call moved to effects.ts
 -	Setup the reducer to do its thing (I used createMutableReducer instead of createReducer to avoid having to do { …state }) and do a quick console.log check to see if the store state was set correctly.
 -	Setup the selector and debug by setting that observable on a component. 
 -	Once the above test runs are successful, then essentially copy the functional flow to the three sections/components and modify as needed.
@@ -19,11 +19,11 @@ I underestimated how long it would take to get the NgRx implementation up and ru
 
 Some other crimes I committed against good coding practices in the name of time:
 -	Models weren’t defined for the API data, resorted to using any for those types.
--	<div class="layout"> on app.component.html should actually be a component itself to avoid over-populating the root component.
+-	`<div class="layout">` on app.component.html should actually be a component itself to avoid over-populating the root component.
 -	The store selector observables on repo.component and prs.component should actually use a combination operator.
 o	Also, this is more subjective, but I think it’s conventional to set the local states directly to the observables. But coming off React, I found it more at home to set the local states to the actual values in the subscription.
 -	The naming convention of “pulls” and “openPRs” could be confusing as it could indicate that filtering takes place on the frontend, but really a query param is used on the API route to only get the pulls that are still open.
--	Leaned into <div> abuse more than I would’ve liked.
+-	Leaned into `<div>` abuse more than I would’ve liked.
 -	Lots of the stylings were common and could’ve been set as global classes instead.
 -	For functional semantics, the list of GitHub accounts could’ve been initialized as store states.
 
