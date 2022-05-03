@@ -1,0 +1,8 @@
+<section>
+	<div class="block">
+		<h3>Repos</h3>
+		<div *ngFor="let repo of repos | keyvalue">
+			<p (click)="getRepoPulls(repo.value['name'])">{{repo.value['name']}}</p>
+		</div>
+	</div>
+</section>

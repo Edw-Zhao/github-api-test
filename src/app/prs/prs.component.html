@@ -1,0 +1,8 @@
+<section>
+	<div class="block">
+		<h3>Open PRs</h3>
+		<div *ngFor="let openPR of openPRs | keyvalue">
+			<p>{{openPR.value['title']}}</p>
+		</div>
+	</div>
+</section>
